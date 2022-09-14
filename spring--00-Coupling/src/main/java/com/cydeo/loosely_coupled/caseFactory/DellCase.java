@@ -1,5 +1,12 @@
 package com.cydeo.loosely_coupled.caseFactory;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Getter
+@Setter
 public class DellCase extends Case{
 
     public DellCase(String model, String manufacturer, String powerSupply) {
