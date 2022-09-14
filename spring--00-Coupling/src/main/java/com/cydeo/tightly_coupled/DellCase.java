@@ -9,5 +9,13 @@ import lombok.Setter;
 @Setter
 public class DellCase {
 
+    private String model;
+    private String manufacturer;
+    private String powerSupply;
+
+    public void pressPowerButton() {
+        System.out.println("Power button pressed");
+    }
+
 
 }
