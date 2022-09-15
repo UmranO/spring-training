@@ -1,11 +1,13 @@
 package com.cydeo.bean_annotation;
 
 
+import com.cydeo.bean_annotation.caseFactory.Case;
 import com.cydeo.bean_annotation.caseFactory.DellCase;
 import com.cydeo.bean_annotation.configuration.ComputerConfig;
 import com.cydeo.bean_annotation.monitorFactory.Monitor;
 import com.cydeo.bean_annotation.monitorFactory.SonyMonitor;
 import com.cydeo.bean_annotation.motherboardFactory.AsusMotherboard;
+import com.cydeo.bean_annotation.motherboardFactory.Motherboard;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -45,9 +47,12 @@ public class ComputerTest {
 
         System.out.println("************Multiple Objects******************");
 
+
         Monitor theMonitor2 = container.getBean("monitorSony", Monitor.class);  //DEFAULT BEAN NAME
         Monitor theMonitor3 = container.getBean("sony", Monitor.class);  //CUSTOM BEAN NAME
         Monitor theMonitor4 = container.getBean( Monitor.class);  //@Primary
+
+
 
     }
 }
