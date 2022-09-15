@@ -3,6 +3,7 @@ package com.cydeo.bean_annotation;
 
 import com.cydeo.bean_annotation.caseFactory.DellCase;
 import com.cydeo.bean_annotation.configuration.ComputerConfig;
+import com.cydeo.bean_annotation.monitorFactory.Monitor;
 import com.cydeo.bean_annotation.monitorFactory.SonyMonitor;
 import com.cydeo.bean_annotation.motherboardFactory.AsusMotherboard;
 import org.springframework.beans.factory.BeanFactory;
@@ -23,13 +24,23 @@ public class ComputerTest {
 
         System.out.println("************Retrieving the beans******************");
 
-        SonyMonitor sony = container.getBean(SonyMonitor.class);
+        SonyMonitor sony = container.getBean(SonyMonitor.class); //Here I am asking directly SonyMonitor
+        //Monitor psony=container.getBean(SonyMonitor.class);
         DellCase dell = container.getBean(DellCase.class);
         AsusMotherboard asus = container.getBean(AsusMotherboard.class);
 
         PC myPc = new PC(dell,sony,asus);
 
         myPc.powerUp();
+        dell.pressPowerButton();
+
+        System.out.println("************Retrieving the beans******************");
+
+//        Monitor theMonitor = container.getBean(Monitor.class); //Here I am asking one of the Monitor objects
+//        Case theCase = container.getBean(Case.class);
+//        Motherboard theMotherboard = container.getBean(Motherboard.class);
+//
+//        PC myPc2 = new PC(theCase,theMonitor,theMotherboard);
 
 
     }
