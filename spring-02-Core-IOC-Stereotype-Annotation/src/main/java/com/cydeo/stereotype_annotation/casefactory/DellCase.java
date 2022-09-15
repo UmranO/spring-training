@@ -1,15 +1,14 @@
-package com.cydeo.stereotype_annotation.casefactory;
+package com.cydeo.stereotype_annotation.caseFactory;
 
-import lombok.Getter;
-import lombok.Setter;
+import org.springframework.stereotype.Component;
 
-@Getter
-@Setter
-public class DellCase extends Case {
+@Component
+public class DellCase extends Case  {
 
-    public DellCase(String model, String manufacturer, String powerSupply) {
-        super(model, manufacturer, powerSupply);
+    public DellCase() {
+        super("2208","Dell","240");
     }
+
 
     public void pressPowerButton() {
 
