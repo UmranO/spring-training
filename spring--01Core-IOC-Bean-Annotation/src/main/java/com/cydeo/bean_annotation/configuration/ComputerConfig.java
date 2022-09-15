@@ -19,7 +19,7 @@ public class ComputerConfig {
         return new SonyMonitor("25 inch Beast","Sony",25);
     }
    /* @Bean
-    public Monitor monitorAcer(){
+    public Monitor monitorAcer(){               If uncomment Spring will be confused and problem
         return new AcerMonitor("23 inch Beast","Acer",23);
     }*/
 
