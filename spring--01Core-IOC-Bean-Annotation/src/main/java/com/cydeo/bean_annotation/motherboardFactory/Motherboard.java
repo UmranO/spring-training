@@ -1,4 +1,4 @@
-package com.cydeo.motherboardFactory;
+package com.cydeo.bean_annotation.motherboardFactory;
 
 public abstract class Motherboard {
 

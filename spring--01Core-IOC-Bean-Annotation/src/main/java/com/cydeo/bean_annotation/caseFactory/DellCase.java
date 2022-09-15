@@ -1,4 +1,4 @@
-package com.cydeo.caseFactory;
+package com.cydeo.bean_annotation.caseFactory;
 
 import lombok.Getter;
 import lombok.Setter;

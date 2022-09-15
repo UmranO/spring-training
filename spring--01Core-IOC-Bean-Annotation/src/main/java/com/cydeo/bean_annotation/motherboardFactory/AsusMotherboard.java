@@ -1,4 +1,4 @@
-package com.cydeo.motherboardFactory;
+package com.cydeo.bean_annotation.motherboardFactory;
 
 public class AsusMotherboard extends Motherboard {
     public AsusMotherboard(String model, String manufacturer, int ramSlots, int cardSlots, String bios) {
