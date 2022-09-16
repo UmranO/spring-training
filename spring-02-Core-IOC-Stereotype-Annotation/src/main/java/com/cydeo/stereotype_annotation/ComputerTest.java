@@ -2,6 +2,7 @@ package com.cydeo.stereotype_annotation;
 
 import com.cydeo.stereotype_annotation.config.PcConfig;
 import com.cydeo.stereotype_annotation.monitorFactory.Monitor;
+import com.cydeo.stereotype_annotation.monitorFactory.SonyMonitor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
