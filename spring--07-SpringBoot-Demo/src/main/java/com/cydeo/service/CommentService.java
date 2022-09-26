@@ -38,5 +38,12 @@ public class CommentService {
         System.out.println(appConfigData.getUrl());
 
     }
+    public void printDbConfigData(){
+        System.out.println(dbConfigData.getMyUserName());
+        System.out.println(dbConfigData.getPassword());
+        System.out.println(dbConfigData.getType());
+    }
+
+
 
 }
