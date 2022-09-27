@@ -11,4 +11,21 @@ public class HomeController {
         return "home.html";
     }
 
+    @RequestMapping("/umran")
+    public String getHomePage2(){
+        return "home.html";
+    }
+
+    @RequestMapping // nothing and /
+    public String getHomePage3(){
+        return "home.html";
+    }
+
+    @RequestMapping ({"/apple","/orange"})
+    public String getHomePage4(){
+        return "home.html";
+    }
+
+
+
 }
