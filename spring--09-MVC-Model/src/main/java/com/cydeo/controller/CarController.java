@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class CarController {
 
+    //localhost:8080/info?make=Honda
     @RequestMapping("/info")
     public String carInfo(@RequestParam String make, Model model){
 
@@ -16,5 +17,14 @@ public class CarController {
         return "car/car-info";
     }
 
+
+    //localhost:8080/info2 (KIA)
+    @RequestMapping("/info2")
+    public String carInfo2(@RequestParam(value = "make",required = false,defaultValue = "KIA") String make, Model model){
+
+        model.addAttribute("make",make);
+
+        return "car/car-info";
+    }
 
 }
