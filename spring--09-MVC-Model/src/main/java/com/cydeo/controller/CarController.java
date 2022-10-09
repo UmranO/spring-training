@@ -25,6 +25,19 @@ public class CarController {
         model.addAttribute("make",make);
 
         return "car/car-info";
+
     }
+    //localhost:8080/info3?make=Honda&year=2015
+    @RequestMapping("/info3")
+    public String carInfo3(@RequestParam String make,@RequestParam int year, Model model){
+
+        model.addAttribute("make",make);
+        model.addAttribute("year",year);
+
+        return "car/car-info";
+    }
+
+
+
 
 }
