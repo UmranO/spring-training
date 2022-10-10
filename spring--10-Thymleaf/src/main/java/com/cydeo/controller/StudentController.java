@@ -26,4 +26,13 @@ public class StudentController {
     }
 
 
+    @RequestMapping("/welcome")
+
+    public String welcome(){
+
+        return "student/welcome";
+    }
+
+
+
 }
