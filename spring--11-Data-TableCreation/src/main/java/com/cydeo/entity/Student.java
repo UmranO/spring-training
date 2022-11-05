@@ -31,6 +31,9 @@ public class Student {
 //    @Enumerated(EnumType.ORDINAL)
     private Gender gender;
 
+    @Transient
+    private String city;
+
 
 
 }
