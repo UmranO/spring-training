@@ -28,7 +28,7 @@ public class Payment {
 
 
     @OneToOne
-    @JoinColumn(name="payment_Detail_id")
+  //  @JoinColumn(name="payment_Detail_id")
     private PaymentDetail paymentDetail;
 
 
