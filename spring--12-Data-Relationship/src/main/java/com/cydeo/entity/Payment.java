@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+
 @Entity
 @NoArgsConstructor
 @Data
@@ -22,8 +23,16 @@ public class Payment {
 
     private BigDecimal amount;
 
+    @Enumerated(EnumType.STRING)
+    private Status paymentStatus;
+
+    public Payment(LocalDate createdDate, BigDecimal amount, Status paymentStatus) {
+        this.createdDate = createdDate;
+        this.amount = amount;
+        this.paymentStatus = paymentStatus;
 
 
+    }
 
 
 }
