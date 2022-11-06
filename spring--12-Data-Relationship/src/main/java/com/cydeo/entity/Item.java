@@ -19,9 +19,8 @@ public class Item {
     private String code;
     private String name;
 
-
-
-
-
-
+    public Item(String code, String name) {
+        this.code = code;
+        this.name = name;
+    }
 }
