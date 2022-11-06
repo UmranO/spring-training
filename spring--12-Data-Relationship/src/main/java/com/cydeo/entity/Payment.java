@@ -27,7 +27,7 @@ public class Payment {
     private Status paymentStatus;
 
 
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL)
   //  @JoinColumn(name="payment_Detail_id")
     private PaymentDetail paymentDetail;
 
