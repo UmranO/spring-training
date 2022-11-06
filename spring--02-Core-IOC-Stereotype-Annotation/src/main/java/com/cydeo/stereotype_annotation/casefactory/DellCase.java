@@ -1,9 +1,9 @@
-package com.cydeo.stereotype_annotation.caseFactory;
+package com.cydeo.stereotype_annotation.casefactory;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class DellCase extends Case  {
+public class DellCase extends com.cydeo.stereotype_annotation.caseFactory.Case {
 
     public DellCase() {
         super("2208","Dell","240");
