@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+
 
 @Entity
 @NoArgsConstructor
@@ -16,6 +18,9 @@ public class Cinema extends BaseEntity{
 
     private String name;
     private String SponsoredName;
+
+    @ManyToOne
+    private Location location;
 
 
 
