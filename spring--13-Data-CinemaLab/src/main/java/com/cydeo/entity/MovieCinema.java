@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -21,10 +18,10 @@ public class MovieCinema extends BaseEntity{
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDate dateTime;
 
-    @ManyToOne
+    @ManyToOne(fetch= FetchType.LAZY)
     private Movie movie;
 
-    @ManyToOne
+    @ManyToOne(fetch= FetchType.LAZY)
     private Cinema cinema;
 
 
