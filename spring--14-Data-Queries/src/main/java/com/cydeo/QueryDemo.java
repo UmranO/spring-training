@@ -1,5 +1,6 @@
 package com.cydeo;
 
+import com.cydeo.entity.Region;
 import com.cydeo.repository.RegionRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -15,6 +16,20 @@ public class QueryDemo implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        System.out.println("-----------REGIONS-----------");
+
+        System.out.println("findByCountry:" + regionRepository.findByCountry("Canada"));
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("findByCountryContaining:" + regionRepository.findByCountryContains("United"));
+        System.out.println("findByCountryContainsOrderByRegion:" + regionRepository.findByCountryContainsOrderByRegion("United"));
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("findTop2ByCountry:" + regionRepository.findTop2ByCountry("United States"));
+        System.out.println("findTop3ByCountry:" + regionRepository.findTop3ByCountry("United States"));
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("findTopByCountryContainsOrderByRegion:" + regionRepository.findTopByCountryContainsOrderByRegion("United States"));
+
+
+
 
     }
 }
