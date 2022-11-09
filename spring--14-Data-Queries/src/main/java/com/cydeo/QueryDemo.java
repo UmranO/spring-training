@@ -45,7 +45,8 @@ public class QueryDemo implements CommandLineRunner {
         System.out.println("findDistinctTop2ByDivisionContains:" + departmentRepository.findDistinctTop2ByDivisionContains("Hea"));
         System.out.println("---------------------------------------------------------------");
 
-
+        System.out.println("-----------EMPLOYEES----------");
+        System.out.println(employeeRepository.retrieveEmployeeDetail());
 
     }
 
