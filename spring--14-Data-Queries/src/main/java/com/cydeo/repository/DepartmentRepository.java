@@ -24,4 +24,7 @@ public interface DepartmentRepository extends JpaRepository<Department,String> {
     List<Department> findDistinctTop3ByDivisionContains(String pattern);
     List<Department> findDistinctTop2ByDivisionContains(String prefix);
 
+    @Query("SELECT d FROM Department d WHERE d.division IN ?1")
+    List<Department> retrieveDepartmentDivision(List<String> division);
+
 }
