@@ -2,7 +2,7 @@ package com.cydeo.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface MovieCinema extends JpaRepository<MovieCinema,Long> {
+public interface MovieCinemaRepository extends JpaRepository<MovieCinemaRepository,Long> {
 
 
 // ------------------- DERIVED QUERIES ------------------- //
