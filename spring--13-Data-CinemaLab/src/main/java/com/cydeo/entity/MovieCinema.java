@@ -5,24 +5,31 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
+import java.time.LocalDateTime;
 
 @Entity
-@NoArgsConstructor
 @Getter
 @Setter
-public class MovieCinema extends BaseEntity{
+@NoArgsConstructor
+public class MovieCinema extends BaseEntity {
 
     @Column(columnDefinition = "TIMESTAMP")
-    private LocalDate dateTime;
+    private LocalDateTime dateTime;
 
-    @ManyToOne(fetch= FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Movie movie;
-
-    @ManyToOne(fetch= FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Cinema cinema;
 
+    @Override
+    public String toString() {
+        return "MovieCinema{" +
+                "dateTime=" + dateTime +
+                '}';
+    }
 
 }
