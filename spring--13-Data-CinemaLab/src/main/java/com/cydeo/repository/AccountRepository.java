@@ -32,6 +32,21 @@ public interface AccountRepository extends JpaRepository<Account,Long> {
 
     //Write a derived query to show list of accounts (UOS)
     List<Account>findBy();
+    // ------------------- JPQL QUERIES ------------------- //
+
+    //Write a JPQL query that returns all accounts
+    @Query("SELECT a FROM Account a")
+    List<Account> fetchAllByUsingJPQL();
+
+    //Write a JPQL query to list all admin accounts
+    @Query("SELECT a FROM Account a WHERE a.role='ADMIN'")
+    List<Account> fetchAdminAccounts();
+
+    //Write a JPQL query to sort all accounts with age
+    @Query("SELECT a FROM Account a ORDER BY a.age")
+    List<Account> fetchAllOrderBasedOnAge();
+
+
 
 
 
