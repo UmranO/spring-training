@@ -1,8 +1,12 @@
 package com.cydeo.controller;
 
+import com.cydeo.dto.CourseDTO;
 import com.cydeo.service.CourseService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/courses/api/v2")
@@ -14,6 +18,14 @@ public class CourseController_ResponseEntity {
         this.courseService = courseService;
     }
 
+    @GetMapping
+    public ResponseEntity<List<CourseDTO>> getAllCourses(){
+        return ResponseEntity
+                .status(HttpStatus.ACCEPTED)
+                .header("Version","Cydeo.V2")
+                .header("Operation","Get List")
+                .body(courseService.getCourses());
+    }
 
 
 }
