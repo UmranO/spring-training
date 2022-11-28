@@ -23,6 +23,11 @@ public class CourseController {
         return courseService.getCourses();
     }
 
-   
+    @GetMapping("{id}")
+    public CourseDTO getCourseById(@PathVariable("id") long courseId){
+        return courseService.getCourseById(courseId);
+    }
+
+
 
 }
