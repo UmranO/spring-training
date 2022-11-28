@@ -33,5 +33,11 @@ public class CourseController {
 
     }
 
+    @PostMapping
+    public CourseDTO createCourse(@RequestBody CourseDTO course){
+
+        return courseService.createCourse(course);
+    }
+
 
 }
