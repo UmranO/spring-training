@@ -49,4 +49,12 @@ public class CourseController_ResponseEntity {
         courseService.deleteCourseById(courseId);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Void> updateCourse(@PathVariable("id") Long courseId,@RequestBody CourseDTO course){
+        courseService.updateCourse(courseId,course);
+        return ResponseEntity.noContent().build();
+    }
+
+
 }
