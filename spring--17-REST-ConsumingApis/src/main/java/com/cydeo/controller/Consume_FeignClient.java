@@ -12,6 +12,7 @@ public class Consume_FeignClient {
     private final UserClient userClient;
 
     public Consume_FeignClient(UserClient userClient) {
+
         this.userClient = userClient;
     }
 
