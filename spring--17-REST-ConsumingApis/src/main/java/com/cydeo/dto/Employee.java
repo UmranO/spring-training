@@ -14,10 +14,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "data",
-    "total",
-    "page",
-    "limit"
+        "data",
+        "total",
+        "page",
+        "limit"
 })
 @Generated("jsonschema2pojo")
 public class Employee {

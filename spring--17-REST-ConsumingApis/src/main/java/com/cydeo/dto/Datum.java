@@ -13,11 +13,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "id",
-    "title",
-    "firstName",
-    "lastName",
-    "picture"
+        "id",
+        "title",
+        "firstName",
+        "lastName",
+        "picture"
 })
 @Generated("jsonschema2pojo")
 public class Datum {
