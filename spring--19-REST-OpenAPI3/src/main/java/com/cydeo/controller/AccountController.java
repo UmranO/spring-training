@@ -14,6 +14,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/accounts")
+@Tag(name = "Account", description = "Account CRUD Operations")
+@Tags(value = {@Tag(name = "Account", description = "Account CRUD Operations"),
+        @Tag(name = "Account2", description = "Account2 CRUD Operations")})
+
 
 public class AccountController {
 
