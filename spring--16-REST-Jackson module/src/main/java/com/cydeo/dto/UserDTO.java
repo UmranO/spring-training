@@ -20,7 +20,7 @@ public class UserDTO {
     private String username;
     private UserRole role;
 
-    @JsonManagedReference
+    @JsonManagedReference  // This field is going to be serialized
     private AccountDTO account;
 
 }
