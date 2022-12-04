@@ -20,6 +20,7 @@ public class AccountDTO {
     private Integer age;
     private String postalCode;
 
+    @JsonBackReference
     private UserDTO user;
 
 }
