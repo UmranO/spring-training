@@ -2,6 +2,7 @@ package com.cydeo.controller;
 
 import com.cydeo.dto.AccountDTO;
 import com.cydeo.service.AccountService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.tags.Tags;
 import org.springframework.http.ResponseEntity;
@@ -29,14 +30,13 @@ public class AccountController {
     }
 
     @GetMapping("/list")
-
+    @Operation(summary = "Read all accounts")
     public ResponseEntity<List<AccountDTO>> getAllAccounts() {
-
         return ResponseEntity.ok(accountService.getAccounts());
     }
 
     @GetMapping
-
+    @Operation(summary = "Read an account by id")
     public ResponseEntity<AccountDTO> getById(@RequestParam("id") Long id) throws Exception {
         return ResponseEntity.ok(accountService.getById(id));
     }
