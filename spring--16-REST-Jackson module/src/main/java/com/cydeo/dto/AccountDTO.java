@@ -8,8 +8,8 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-//@JsonIgnoreProperties(value = {"address", "country"})
-
+//@JsonIgnoreProperties(value = {"address", "country"}, ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AccountDTO {
 
     @JsonIgnore
@@ -21,7 +21,7 @@ public class AccountDTO {
     private Integer age;
     private String postalCode;
 
-    @JsonBackReference  // This field is not going to be serialize
+    @JsonBackReference  // This field is not going to be serialized
     private UserDTO user;
 
 }
