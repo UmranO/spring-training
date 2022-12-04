@@ -3,6 +3,7 @@ package com.cydeo.controller;
 import com.cydeo.dto.UserDTO;
 import com.cydeo.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.headers.Header;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -39,6 +40,9 @@ public class UserController {
 
     @PostMapping
     @Operation(summary = "Create a user")
+    @ApiResponse(responseCode = "201", description = "User created successfully (CREATED)",
+            content = {@Content(mediaType = "application/xml"), @Content(mediaType = "application/json")},
+            headers = {@Header(name = "Connection", description = "keep-alive")})
     public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.create(userDTO));
     }
