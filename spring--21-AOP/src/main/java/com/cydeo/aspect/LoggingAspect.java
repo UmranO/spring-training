@@ -35,24 +35,33 @@ public class LoggingAspect {
 //        logger.info("Before -> Method: {}, Arguments: {}, Target: {}"
 //                , joinPoint.getSignature(), joinPoint.getArgs(), joinPoint.getTarget());
 //    }
+//
+//    @Pointcut("within(com.cydeo.controller..*)")
+//    public void anyControllerOperation() {}
+//
+//    @Pointcut("@within(org.springframework.stereotype.Service)")
+//    public void anyServiceOperation() {}
+//
+//    @Before("anyControllerOperation() || anyServiceOperation()")
+//    public void beforeControllerOrServiceAdvice(JoinPoint joinPoint) {
+//        logger.info("Before -> Method: {}, Arguments: {}, Target: {}"
+//                , joinPoint.getSignature(), joinPoint.getArgs(), joinPoint.getTarget());
+//    }
+//
+//    @Pointcut("@annotation(org.springframework.web.bind.annotation.DeleteMapping)")
+//    public void anyDeleteControllerOperation() {}
+//
+//    @Before("anyDeleteControllerOperation()")
+//    public void beforeDeleteMappingAnnotation(JoinPoint joinPoint) {
+//        logger.info("Before -> Method: {}, Arguments: {}, Target: {}"
+//                , joinPoint.getSignature(), joinPoint.getArgs(), joinPoint.getTarget());
+//    }
 
-    @Pointcut("within(com.cydeo.controller..*)")
-    public void anyControllerOperation() {}
+    @Pointcut("@annotation(com.cydeo.annotation.LoggingAnnotation)")
+    public void loggingAnnotationPC() {}
 
-    @Pointcut("@within(org.springframework.stereotype.Service)")
-    public void anyServiceOperation() {}
-
-    @Before("anyControllerOperation() || anyServiceOperation()")
-    public void beforeControllerOrServiceAdvice(JoinPoint joinPoint) {
-        logger.info("Before -> Method: {}, Arguments: {}, Target: {}"
-                , joinPoint.getSignature(), joinPoint.getArgs(), joinPoint.getTarget());
-    }
-
-    @Pointcut("@annotation(org.springframework.web.bind.annotation.DeleteMapping)")
-    public void anyDeleteControllerOperation() {}
-
-    @Before("anyDeleteControllerOperation()")
-    public void beforeDeleteMappingAnnotation(JoinPoint joinPoint) {
+    @Before("loggingAnnotationPC()")
+    public void beforeLoggingAnnotation(JoinPoint joinPoint) {
         logger.info("Before -> Method: {}, Arguments: {}, Target: {}"
                 , joinPoint.getSignature(), joinPoint.getArgs(), joinPoint.getTarget());
     }
