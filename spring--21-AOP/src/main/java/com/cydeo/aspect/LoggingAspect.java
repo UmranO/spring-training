@@ -48,5 +48,14 @@ public class LoggingAspect {
                 , joinPoint.getSignature(), joinPoint.getArgs(), joinPoint.getTarget());
     }
 
+    @Pointcut("@annotation(org.springframework.web.bind.annotation.DeleteMapping)")
+    public void anyDeleteControllerOperation() {}
+
+    @Before("anyDeleteControllerOperation()")
+    public void beforeDeleteMappingAnnotation(JoinPoint joinPoint) {
+        logger.info("Before -> Method: {}, Arguments: {}, Target: {}"
+                , joinPoint.getSignature(), joinPoint.getArgs(), joinPoint.getTarget());
+    }
+
 
 }
