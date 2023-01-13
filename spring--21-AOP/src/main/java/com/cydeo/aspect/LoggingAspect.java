@@ -1,6 +1,7 @@
 package com.cydeo.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -57,14 +58,23 @@ public class LoggingAspect {
 //                , joinPoint.getSignature(), joinPoint.getArgs(), joinPoint.getTarget());
 //    }
 
-    @Pointcut("@annotation(com.cydeo.annotation.LoggingAnnotation)")
-    public void loggingAnnotationPC() {}
+//    @Pointcut("@annotation(com.cydeo.annotation.LoggingAnnotation)")
+//    public void loggingAnnotationPC() {}
+//
+//    @Before("loggingAnnotationPC()")
+//    public void beforeLoggingAnnotation(JoinPoint joinPoint) {
+//        logger.info("Before -> Method: {}, Arguments: {}, Target: {}"
+//                , joinPoint.getSignature(), joinPoint.getArgs(), joinPoint.getTarget());
+//    }
 
-    @Before("loggingAnnotationPC()")
-    public void beforeLoggingAnnotation(JoinPoint joinPoint) {
-        logger.info("Before -> Method: {}, Arguments: {}, Target: {}"
-                , joinPoint.getSignature(), joinPoint.getArgs(), joinPoint.getTarget());
+    @Pointcut("@annotation(org.springframework.web.bind.annotation.GetMapping)")
+    public void afterReturningGetMappingAnnotation() {}
+
+    @AfterReturning(pointcut = "afterReturningGetMappingAnnotation()", returning = "result")
+    public void afterReturningGetMappingOperation(JoinPoint joinPoint, Object result) {
+        logger.info("After Returning -> Method: {}, Result: {}", joinPoint.getSignature(), result.toString());
     }
+
 
 
 }
