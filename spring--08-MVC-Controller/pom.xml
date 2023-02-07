@@ -9,14 +9,15 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cydeo</groupId>
-    <artifactId>spring--08-MVC-Controller</artifactId>
+    <artifactId>spring-08-MVC-Controller</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring--08-MVC-Controller</name>
-    <description>spring--08-MVC-Controller</description>
+    <name>spring-08-MVC-Controller</name>
+    <description>spring-08-MVC-Controller</description>
     <properties>
         <java.version>11</java.version>
     </properties>
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
