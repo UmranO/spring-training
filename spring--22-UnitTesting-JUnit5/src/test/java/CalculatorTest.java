@@ -19,8 +19,8 @@ class CalculatorTest {
     @Test
     void testCase2(){
         System.out.println("Test Case 2");
-        assertEquals("add", Calculator.operator);   //It is same as assertTrue
-        assertTrue(Calculator.operator.equals("add"));       //It is same as assertEquals
+        assertEquals("add", Calculator.operator);   //Same as assertTrue--We can do more than 1 assertion in 1
+        assertTrue(Calculator.operator.equals("add"));       //Same as assertEquals--                     unit test
     }
     @Test
     void testCase3(){
