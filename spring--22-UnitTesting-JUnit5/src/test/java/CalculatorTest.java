@@ -33,6 +33,15 @@ class CalculatorTest {
     @Test
     void testCase4(){
         System.out.println("Test Case 4");
+        String nullString=null;
+        String notNullString="Cydeo";
+
+        assertNull(nullString);
+        assertNotNull(notNullString);
+
+//      assertNull(notNullString);              //When failed we'll see underlined and it doesn't go to the next line
+        assertNotNull(nullString);
+
     }
     @Test
     void testCase5(){
