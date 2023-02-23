@@ -69,4 +69,19 @@ public class CalculatorParameterizedTest {
     return new String[]{"Java", "JS", "TS"};   //@MethodSource can work with an Array,streams, iterable-collections
 
     }
+
+    @ParameterizedTest
+    @CsvSource ({
+                 "10, 20, 30",
+                 "20, 20, 40",
+                 "30, 20, 100"
+    })
+    void testCase7(int num1, int num2, int result){
+        Assertions.assertEquals(result,Calculator.add(num1, num2)); //Checking if the sum of num1&num2 will give result
+                                                                    //Which means we are testing Calculator.add() by
+                                                                    //using data coming from CsvSource
+                                                                    //1sr 2 will pass but the last one will fail
+    }
+
+
 }
