@@ -1,9 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.EmptySource;
-import org.junit.jupiter.params.provider.NullAndEmptySource;
-import org.junit.jupiter.params.provider.NullSource;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.*;
 
 public class CalculatorParameterizedTest {
 
@@ -39,12 +36,14 @@ public class CalculatorParameterizedTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"Java", "JS", "TS"})
-        // @EmptySource  //UOS sets it to ""
-    @NullSource          //UOS sets it to null at this point
+    // @EmptySource  //UOS sets it to ""
+    @NullSource
+        //UOS sets it to null at this point
     void testCase4(String arg) {
         Assertions.assertFalse(arg.isEmpty());          //This fails bec. NullPointerException so no chance of invoking
-                                                        //"String.isEmpty()" bec "arg" is null
+        //"String.isEmpty()" bec "arg" is null
     }
+
     @ParameterizedTest
     @ValueSource(strings = {"Java", "JS", "TS"})
     // @EmptySource  -UOS sets it to ""
@@ -52,10 +51,22 @@ public class CalculatorParameterizedTest {
     @NullAndEmptySource
     void testCase5(String arg) {
         Assertions.assertFalse(arg.isEmpty()); //1st 3 passes but in 4th null causes it to throw an exception and the
-                                               //5th fails bec. it couldn't assert if it is empty or not.-Assertion
-                                               //failed-You can use these @s for validation eg@NotNull.,
-                                               //@EmptySource in collections as well
+        //5th fails bec. it couldn't assert if it is empty or not.-Assertion
+        //failed-You can use these @s for validation eg@NotNull.,
+        //@EmptySource in collections as well
     }
 
+    @ParameterizedTest
+    @MethodSource("stringProvider")           //Has to be put on top the testcase/test().
+                                              //Another () will provide data to this MethodSourcehere: StringProvider()
+                                              //@MethodSource will find stringProvider() & it will get the return as the
+
+    void testCase6(String arg) {             //parameters & 1 by 1 put those elements as String arguments to testCase6()
+    Assertions.assertFalse(arg.isEmpty());
+}
+    static String[] stringProvider(){          //By using @MethodSource we can get this data coming from this() by
+                                               //putting the factory method's name inside the ("") of the () in test.
+    return new String[]{"Java", "JS", "TS"};
 
     }
+}
