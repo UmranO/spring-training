@@ -20,12 +20,16 @@ class CalculatorTest {
     void testCase2(){
         System.out.println("Test Case 2");
         assertEquals("add", Calculator.operator);   //Same as assertTrue--We can do more than 1 assertion in 1
-        assertTrue(Calculator.operator.equals("add"));       //Same as assertEquals--                     unit test
+        assertTrue(Calculator.operator.equals("add"));       //Same as assertEquals--                         unit test
     }
     @Test
     void testCase3(){
         System.out.println("Test Case 3");
-    }
+      //assertArrayEquals(new int[] {1,2,3}, new int [] {1,2,3}, "Arrays are not same.");
+                                  //These are 2 diff. Arrays in the memory but if they have the same elements in the
+                                     //same order they are said to be equal and assertArrayEquals pass
+        assertArrayEquals(new int[] {1,2,3}, new int [] {1,3,2}, "Arrays are not same.");
+        }                                                            //we see the messages only if the tests fail
     @Test
     void testCase4(){
         System.out.println("Test Case 4");
