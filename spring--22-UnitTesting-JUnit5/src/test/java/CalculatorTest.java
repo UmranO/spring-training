@@ -1,5 +1,8 @@
 import org.junit.jupiter.api.Test;
 
+import java.nio.file.AccessDeniedException;
+import java.util.concurrent.Callable;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
@@ -11,6 +14,20 @@ class CalculatorTest {
         assertEquals(5,actual);                     //JUnit5 expected value is written 1st & actual is the 2nd
         assertEquals(5,actual,"Test failed");       //we can also add a fail message
     }
+
+    @Test
+    void add2(){
+        System.out.println("Add2 method");
+    //assertThrows(IllegalArgumentException.class, ()->Calculator.add2(3,2)); //This test should fail either if no
+                                                                              //exception thrown OR there is one but
+                                                                              //the type exception thrown is as NOT the
+                                                                              //expected Exception type
+    //assertThrows(AccessDeniedException.class, ()->Calculator.add2(3,2));    //since num1>num2 there should be an excep.
+
+    assertThrows(IllegalArgumentException.class, ()->Calculator.add2(2,3));  //num1>num2 there should NOT be an excep.
+
+    }
+
     @Test
     void testCase1(){
       //  System.out.println("Test Case 1");
@@ -46,6 +63,14 @@ class CalculatorTest {
     @Test
     void testCase5(){
         System.out.println("Test Case 5");
+        Calculator c1 = new Calculator();
+        Calculator c2 = c1;
+        Calculator c3 = new Calculator();
+
+        assertSame(c1,c2);                                        //To check object references you need to use these()s
+        assertNotSame(c1,c3);
+
+        }
+
     }
 
-}
