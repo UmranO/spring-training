@@ -1,6 +1,4 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.nio.file.AccessDeniedException;
 import java.util.concurrent.Callable;
@@ -9,12 +7,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
 
-    @BeforeEach
+    @BeforeAll                                       //This @ makes this () to run before all the other () in this Class
+    static void setUpAll(){
+        System.out.println("BeforeAll is executed.");
+    }
+
+    @AfterAll                                         //This @ makes this () to run after all the other () in this Class
+    static void tearDownAll(){
+        System.out.println("AfterAll is executed.");
+    }
+
+    @BeforeEach                                 //This @ makes this () to run before each of the other ()s in this Class
     void setUpEach(){
         System.out.println("BeforeEach is executed.");
     }
 
-    @AfterEach
+    @AfterEach                                  //This @ makes this () to run after each of the other ()s in this Class
     void tearDownEach(){
         System.out.println("AfterEach is executed.");
     }
@@ -68,7 +76,7 @@ class CalculatorTest {
         assertNull(nullString);
         assertNotNull(notNullString);
 
-//      assertNull(notNullString);              //When failed we'll see underlined and it doesn't go to the next line
+//      assertNull(notNullString);                //When failed we'll see underlined and it doesn't go to the next line
         assertNotNull(nullString);
 
     }
