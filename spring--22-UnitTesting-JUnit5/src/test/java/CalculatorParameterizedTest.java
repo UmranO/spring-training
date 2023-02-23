@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EmptySource;
+import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.NullSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -44,5 +45,17 @@ public class CalculatorParameterizedTest {
         Assertions.assertFalse(arg.isEmpty());          //This fails bec. NullPointerException so no chance of invoking
                                                         //"String.isEmpty()" bec "arg" is null
     }
+    @ParameterizedTest
+    @ValueSource(strings = {"Java", "JS", "TS"})
+    // @EmptySource  -UOS sets it to ""
+    // @NullSource   -UOS sets it to null at this point
+    @NullAndEmptySource
+    void testCase5(String arg) {
+        Assertions.assertFalse(arg.isEmpty()); //1st 3 passes but in 4th null causes it to throw an exception and the
+                                               //5th fails bec. it couldn't assert if it is empty or not.-Assertion
+                                               //failed-You can use these @s for validation eg@NotNull.,
+                                               //@EmptySource in collections as well
+    }
+
 
     }
