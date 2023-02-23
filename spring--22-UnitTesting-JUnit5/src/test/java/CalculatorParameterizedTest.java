@@ -66,7 +66,7 @@ public class CalculatorParameterizedTest {
 }
     static String[] stringProvider(){          //By using @MethodSource we can get this data coming from this() by
                                                //putting the factory method's name inside the ("") of the () in test.
-    return new String[]{"Java", "JS", "TS"};
+    return new String[]{"Java", "JS", "TS"};   //@MethodSource can work with an Array,streams, iterable-collections
 
     }
 }
