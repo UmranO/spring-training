@@ -80,8 +80,10 @@ public class CalculatorParameterizedTest {
         Assertions.assertEquals(result,Calculator.add(num1, num2)); //Checking if the sum of num1&num2 will give result
                                                                     //Which means we are testing Calculator.add() by
                                                                     //using data coming from CsvSource
-                                                                    //1sr 2 will pass but the last one will fail
+                                                                    //1sr 2 will pass but the last one will fail bec
+   //Expected:100 but Actual:50- The Expected is the Data provided in the Csv (100)-We have problem with the test
+   //data.Either fix the data(100) OR if we don't know what the Calculator.add() is doing we might think that this() as
+   //the problem. But this is not efficient when we have a bunch of data to our Class/java code. So we'll use Csv file
+   //instead and the @CsvFileSource -Each line from the file work as a list of parameters.
     }
-
-
 }
