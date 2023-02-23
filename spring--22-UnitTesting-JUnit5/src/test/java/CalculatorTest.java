@@ -27,7 +27,9 @@ class CalculatorTest {
         System.out.println("AfterEach is executed.");
     }
 
+    //There is another @ @DisplayName("MyMethod which show the name display as MyMethod instead of the name of the ()
     @Test
+ //   @DisplayName("MyMethod")
     void add() {
         System.out.println("Add method");
         int actual = Calculator.add(2,3);
